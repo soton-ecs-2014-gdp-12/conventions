@@ -3,6 +3,15 @@ JavaScript coding convention
 
 Strict mode should be used (`'use strict';`). Semicolons should never be omitted.
 
+In object definitions, trailing commas should always be used. For example:
+
+```js
+obj = {
+	foo: 'bar',
+	baz: 'quux',
+}
+```
+
 Indentation
 -----------
 

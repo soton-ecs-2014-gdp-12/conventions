@@ -54,3 +54,21 @@ Types
 -----
 
 The [section of JavaScript Garden on Types](https://bonsaiden.github.io/JavaScript-Garden/#types) gives a number of guidelines (in the conclusion paragraphs) which should be followed.
+
+AngularJS
+---------
+
+### Dependency injection ###
+
+When defining a directive, service, view, controller, etc., and dynamically injecting dependencies, make sure to pass the parameter name as a string into the array. For example:
+
+```js
+angular.module("com.example.foobar", [])
+	.directive(
+	"ngFooBar",
+	["$window", "VG_STATES", function($window, VG_STATES) {
+		...
+	}])
+```
+
+This stops minifiers from breaking the dependency information when they rename parameters.

@@ -55,6 +55,20 @@ Types
 
 The [section of JavaScript Garden on Types](https://bonsaiden.github.io/JavaScript-Garden/#types) gives a number of guidelines (in the conclusion paragraphs) which should be followed.
 
+JSHint
+------
+
+JSHint directive comments should be kept to a minimum, with configuration moved into the `.jshintrc` file where possible. If file-specific configuration is necessary, it should go at the top of the file (before `'use strict';`) unless:
+
+* it is specific to a section of the file, or
+
+* it describes the changes made to the environment by a particular line of code, for example by the `importScripts` method in a Web Worker. In this case the directive should be on the next line, indented. For example:
+
+  ```js
+  importScripts("../../app/bower_components/videogular-questions/questions-worker.js");
+      /* global loadAnnotations */
+  ```
+
 AngularJS
 ---------
 
